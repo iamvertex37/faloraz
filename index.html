@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>فالوراز - فال روزانه، تاروت، قهوه و بیشتر</title>
+  <meta name="description" content="فالوراز - بهترین فال‌های ایرانی با انرژی مثبت: روزانه، قهوه، تاروت، حافظ، رمل، جفر، ابجد">
+  <meta name="theme-color" content="#bb86fc">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>فالوراز</h1>
+    <button id="theme-toggle">🌙</button>
+    <button id="notify-btn">فعال‌سازی اعلان‌ها 🔔</button>
+  </header>
+
+  <main class="swipe-container">
+    <div class="swipe-wrapper">
+      <!-- مقدمه اصلی -->
+      <section class="s swipe-section intro-section">
+        <p class="intro">به فالوراز خوش آمدی! ✨<br>جایی که ستارگان، حافظ، رمل و قهوه با هم حرف می‌زنن تا آینده‌ات رو روشن کنن.</p>
+        <h2>انتخاب فال</h2>
+        <div class="fal-list">
+          <button onclick="location.hash='#daily'">فال روزانه</button>
+          <button onclick="location.hash='#coffee'">فال قهوه</button>
+          <button onclick="location.hash='#tarot'">فال تاروت</button>
+          <button onclick="location.hash='#hafez'">فال حافظ</button>
+          <button onclick="location.hash='#ramal'">فال رمل</button>
+          <button onclick="location.hash='#jafar'">فال جفر</button>
+          <button onclick="location.hash='#abjad'">فال ابجد</button>
+          <button onclick="location.hash='#dream'">تعبیر خواب</button>
+        </div>
+      </section>
+
+      <!-- فال روزانه -->
+      <section class="s swipe-section" id="daily">
+        <p class="intro">فال روزانه، پیام ستارگان برای تو. انرژی امروزت رو کشف کن! 🌟</p>
+        <h2>فال روزانه</h2>
+        <select id="daily-sign">
+          <option value="aries">برج حمل</option>
+          <option value="taurus">برج ثور</option>
+          <option value="gemini">برج جوزا</option>
+          <option value="cancer">برج سرطان</option>
+          <option value="leo">برج اسد</option>
+          <option value="virgo">برج سنبله</option>
+          <option value="libra">برج میزان</option>
+          <option value="scorpio">برج عقرب</option>
+          <option value="sagittarius">برج قوس</option>
+          <option value="capricorn">برج جدی</option>
+          <option value="aquarius">برج دلو</option>
+          <option value="pisces">برج حوت</option>
+        </select>
+        <button onclick="dailyHoroscope()">فال بگیر</button>
+        <div id="daily-result"></div>
+      </section>
+
+      <!-- فال قهوه -->
+      <section class="s swipe-section" id="coffee">
+        <p class="intro">فال قهوه، آئین باستانی ایرانی. شکل‌های فنجون رازهای آینده رو فاش می‌کنن! ☕</p>
+        <h2>فال قهوه</h2>
+        <textarea id="coffee-description" placeholder="شکل‌ها رو توصیف کن (مثل پرنده، درخت، قلب...)"></textarea>
+        <input type="file" id="coffee-image" accept="image/*">
+        <button onclick="submitCoffee()">تعبیر بگیر</button>
+        <div id="coffee-result"></div>
+      </section>
+
+      <!-- بقیه فال‌ها رو بعداً اضافه می‌کنیم -->
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
