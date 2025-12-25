@@ -3,42 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>فالوراز - فال روزانه، تاروت، قهوه و بیشتر</title>
-  <meta name="description" content="فالوراز - بهترین فال‌های ایرانی با انرژی مثبت: روزانه، قهوه، تاروت، حافظ، رمل، جفر، ابجد">
+  <title>فالوراز - فال ایرانی با انرژی مثبت</title>
+  <meta name="description" content="فالوراز - فال روزانه، قهوه، تاروت، حافظ، رمل، جفر، ابجد و تعبیر خواب با تعبیر هوشمند و امیدبخش">
   <meta name="theme-color" content="#bb86fc">
   <link rel="manifest" href="manifest.json">
   <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link href="https://fonts.googleapis.com/css2?family=Vazir:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <h1>فالوراز</h1>
-    <button id="theme-toggle">🌙</button>
-    <button id="notify-btn">فعال‌سازی اعلان‌ها 🔔</button>
+    <div class="header-buttons">
+      <button id="theme-toggle" aria-label="تغییر تم">🌙</button>
+      <button id="notify-btn" aria-label="اعلان‌ها">🔔</button>
+    </div>
   </header>
 
-  <main class="swipe-container">
-    <div class="swipe-wrapper">
-      <!-- مقدمه اصلی -->
-      <section class="s swipe-section intro-section">
-        <p class="intro">به فالوراز خوش آمدی! ✨<br>جایی که ستارگان، حافظ، رمل و قهوه با هم حرف می‌زنن تا آینده‌ات رو روشن کنن.</p>
-        <h2>انتخاب فال</h2>
-        <div class="fal-list">
-          <button onclick="location.hash='#daily'">فال روزانه</button>
-          <button onclick="location.hash='#coffee'">فال قهوه</button>
-          <button onclick="location.hash='#tarot'">فال تاروت</button>
-          <button onclick="location.hash='#hafez'">فال حافظ</button>
-          <button onclick="location.hash='#ramal'">فال رمل</button>
-          <button onclick="location.hash='#jafar'">فال جفر</button>
-          <button onclick="location.hash='#abjad'">فال ابجد</button>
-          <button onclick="location.hash='#dream'">تعبیر خواب</button>
+  <main class="container">
+    <!-- صفحه اصلی -->
+    <section id="home" class="section active">
+      <div class="hero">
+        <h2>به فالوراز خوش آمدی ✨</h2>
+        <p class="intro-text">جایی که ستارگان، حافظ، رمل و قهوه با هم حرف می‌زنن تا آینده‌ات رو روشن کنن</p>
+        <div class="cards-grid">
+          <div class="fal-card" data-target="daily">
+            <div class="card-icon">🌟</div>
+            <h3>فال روزانه</h3>
+            <p>پیام ستارگان برای امروزت</p>
+          </div>
+          <div class="fal-card" data-target="coffee">
+            <div class="card-icon">☕</div>
+            <h3>فال قهوه</h3>
+            <p>رازهای پنهان فنجون</p>
+          </div>
+          <div class="fal-card" data-target="tarot">
+            <div class="card-icon">🃏</div>
+            <h3>فال تاروت</h3>
+            <p>کارت‌های جادویی آینده</p>
+          </div>
+          <div class="fal-card" data-target="hafez">
+            <div class="card-icon">📖</div>
+            <h3>فال حافظ</h3>
+            <p>سخن حافظ با دل تو</p>
+          </div>
+          <div class="fal-card" data-target="ramal">
+            <div class="card-icon">🔮</div>
+            <h3>فال رمل</h3>
+            <p>علم باستانی پیشگویی</p>
+          </div>
+          <div class="fal-card" data-target="jafar">
+            <div class="card-icon">📜</div>
+            <h3>فال جفر</h3>
+            <p>طلسم‌های شخصی حاجت</p>
+          </div>
+          <div class="fal-card" data-target="abjad">
+            <div class="card-icon">🔢</div>
+            <h3>فال ابجد</h3>
+            <p>راز اعداد و حروف</p>
+          </div>
+          <div class="fal-card" data-target="dream">
+            <div class="card-icon">🌙</div>
+            <h3>تعبیر خواب</h3>
+            <p>پیام‌های شبانه ناخودآگاه</p>
+          </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- فال روزانه -->
-      <section class="s swipe-section" id="daily">
+    <!-- بخش فال روزانه -->
+    <section id="daily" class="section">
+      <button class="back-btn">← بازگشت</button>
+      <div class="fal-content">
         <p class="intro">فال روزانه، پیام ستارگان برای تو. انرژی امروزت رو کشف کن! 🌟</p>
-        <h2>فال روزانه</h2>
         <select id="daily-sign">
           <option value="aries">برج حمل</option>
           <option value="taurus">برج ثور</option>
@@ -53,22 +90,23 @@
           <option value="aquarius">برج دلو</option>
           <option value="pisces">برج حوت</option>
         </select>
-        <button onclick="dailyHoroscope()">فال بگیر</button>
-        <div id="daily-result"></div>
-      </section>
+        <button class="main-btn" onclick="dailyHoroscope()">فال امروزم رو بگیر</button>
+        <div id="daily-result" class="result-box"></div>
+      </div>
+    </section>
 
-      <!-- فال قهوه -->
-      <section class="s swipe-section" id="coffee">
+    <!-- بخش فال قهوه -->
+    <section id="coffee" class="section">
+      <button class="back-btn">← بازگشت</button>
+      <div class="fal-content">
         <p class="intro">فال قهوه، آئین باستانی ایرانی. شکل‌های فنجون رازهای آینده رو فاش می‌کنن! ☕</p>
-        <h2>فال قهوه</h2>
-        <textarea id="coffee-description" placeholder="شکل‌ها رو توصیف کن (مثل پرنده، درخت، قلب...)"></textarea>
-        <input type="file" id="coffee-image" accept="image/*">
-        <button onclick="submitCoffee()">تعبیر بگیر</button>
-        <div id="coffee-result"></div>
-      </section>
+        <textarea id="coffee-description" placeholder="شکل‌ها رو توصیف کن (مثل پرنده، درخت، قلب، مار...)"></textarea>
+        <button class="main-btn" onclick="submitCoffee()">تعبیر فال قهوه</button>
+        <div id="coffee-result" class="result-box"></div>
+      </div>
+    </section>
 
-      <!-- بقیه فال‌ها رو بعداً اضافه می‌کنیم -->
-    </div>
+    <!-- بقیه فال‌ها بعداً اضافه می‌شن -->
   </main>
 
   <script src="script.js"></script>
