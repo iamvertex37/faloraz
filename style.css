@@ -1,4 +1,4 @@
-/* فالوراز - استایل پایه + دارک مود + انیمیشن‌های ساده */
+/* فالوراز - استایل لوکس و حرفه‌ای ۲۰۲۵ */
 
 * {
   margin: 0;
@@ -7,18 +7,17 @@
 }
 
 body {
-  font-family: 'Vazir', 'Tahoma', sans-serif;
-  background: #0f0c29;
+  font-family: 'Vazir', sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #0f0c29);
   color: #e0e0ff;
   min-height: 100vh;
-  transition: background 0.5s ease, color 0.5s ease;
+  transition: all 0.5s ease;
   direction: rtl;
-  text-align: right;
 }
 
 .light-mode {
-  background: #f0f4ff;
-  color: #1a0033;
+  background: linear-gradient(135deg, #f0f4ff, #d9e2ff, #f0f4ff);
+  color: #1a 1a0033;
 }
 
 header {
@@ -26,88 +25,164 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 20px;
-  background: rgba(0,0,0,0.2);
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
 }
 
 h1 {
-  font-size: 2em;
-  color: #bb86fc;
-  text-shadow: 0 0 10px #bb86fc;
+  font-size: 2.2em;
+  background: linear-gradient(45deg, #bb86fc, #00ffea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(187,134,252,0.5);
 }
 
-#theme-toggle, #notify-btn {
+.header-buttons button {
   background: none;
   border: none;
   font-size: 1.8em;
   cursor: pointer;
+  margin-left: 15px;
+  transition: transform 0.3s;
 }
 
-.intro {
-  font-size: 1.2em;
-  color: #bb86fc;
+.header-buttons button:hover {
+  transform: scale(1.2);
+}
+
+.hero {
   text-align: center;
-  margin: 20px;
-  line-height: 1.6;
-  font-style: italic;
+  padding: 40px 20px;
 }
 
-.s {
-  padding: 30px;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-h2 {
-  font-size: 2em;
-  color: #bb86fc;
+.hero h2 {
+  font-size: 2.5em;
   margin-bottom: 20px;
-  text-shadow: 0 0 10px #bb86fc;
+  color: #bb86fc;
+  text-shadow: 0 0 15px rgba(187,134,252,0.6);
 }
 
-input, textarea, select {
-  width: 100%;
-  max-width: 400px;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 15px;
-  border: 2px solid #bb86fc;
+.intro-text {
+  font-size: 1.3em;
+  margin: 20px 0 40px;
+  line-height: 1.8;
+  color: #bb86fc;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.fal-card {
   background: rgba(255,255,255,0.1);
-  color: inherit;
-  font-size: 1.1em;
+  border-radius: 25px;
+  padding: 25px 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(187,134,252,0.2);
 }
 
-button {
-  padding: 15px 30px;
-  margin: 20px 0;
+.fal-card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 50px rgba(187,134,252,0.6);
+  background: rgba(187,134,252,0.2);
+}
+
+.card-icon {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.fal-card h3 {
+  margin: 15px 0 10px;
+  color: #bb86fc;
+  font-size: 1.3em;
+}
+
+.fal-card p {
+  font-size: 0.9em;
+  color: #a0a0ff;
+}
+
+.section {
+  display: none;
+  padding: 20px;
+  min-height: 100vh;
+}
+
+.section.active {
+  display: block;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  font-size: 2.2em;
+  color: #bb86fc;
+  cursor: pointer;
+  margin: 20px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  transform: scale(1.2);
+}
+
+.fal-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.fal-content .intro {
+  font-size: 1.3em;
+  margin-bottom: 30px;
+  color: #bb86fc;
+}
+
+.main-btn {
+  padding: 18px 50px;
   background: linear-gradient(45deg, #bb86fc, #9f5cff);
   border: none;
-  border-radius: 30px;
+  border-radius: 50px;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.3em;
   cursor: pointer;
-  box-shadow: 0 0 20px rgba(187,134,252,0.5);
+  box-shadow: 0 10px 30px rgba(187,134,252,0.5);
+  margin: 30px 0;
   transition: all 0.3s;
 }
 
-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(187,134,252,0.8);
+.main-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(187,134,252,0.7);
 }
 
-#daily-result, #coffee-result, #tarot-result, #hafez-result, #ramal-result, #jafar-result, #abjad-result {
-  margin-top: 30px;
-  padding: 20px;
+.result-box {
+  margin-top: 40px;
+  padding: 30px;
   background: rgba(255,255,255,0.1);
-  border-radius: 20px;
-  max-width: 600px;
-  line-height: 1.8;
-  font-size: 1.1em;
+  border-radius: 25px;
+  line-height: 2;
+  font-size: 1.15em;
+  text-align: right;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(187,134,252,0.2);
 }
 
 .loading {
@@ -121,21 +196,16 @@ button:hover {
   50% { opacity: 0.5; }
 }
 
-/* Swipe */
-.swipe-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.swipe-wrapper {
-  display: flex;
-  width: 100%;
-  transition: transform 0.5s ease;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
-  h1 { font-size: 1.8em; }
-  h2 { font-size: 1.8em; }
-  .intro { font-size: 1.1em; }
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 20px;
+  }
+  .fal-card h3 {
+    font-size: 1.1em;
+  }
+  .card-icon {
+    font-size: 3em;
+  }
 }
